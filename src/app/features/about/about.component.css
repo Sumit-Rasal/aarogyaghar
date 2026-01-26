@@ -182,7 +182,12 @@
 }
 
 .value-icon.color-compassion {
-  color: #a0aec0; /* A soft grey-blue */
+  color: #f6e05e; /* A warm yellow */
+}
+
+.value-icon.color-compassion svg {
+  fill: #f6e05e;
+  stroke: #f6e05e;
 }
 
 .value-icon.color-equality {
