@@ -12,10 +12,6 @@ export const STATS = [
     value: '100+',
     label: 'Volunteers',
   },
-  {
-    value: '5,000+',
-    label: 'Meals Provided',
-  },
 ];
 
 export const ASSISTANCE_TYPES: AssistanceType[] = [
