@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --primary-blue: #0054A6;
+    --secondary-green: #2BB673;
+    --text-dark: #2d3436;
+    --bg-light: #f9fcff;
+    /* This gradient matches your new branding */
+    --gradient: linear-gradient(135deg, #0054A6 0%, #2BB673 100%);
+}

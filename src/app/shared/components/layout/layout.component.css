@@ -1,0 +1,123 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow: visible;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 80px;
+  overflow: visible;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: visible;
+}
+
+.logo img {
+  height: 250px;
+  width: auto;
+  object-fit: contain;
+  margin-top: -85px;
+  margin-bottom: -85px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--secondary-green);
+}
+
+/* Get Help Today Button */
+.btn-nav {
+  background: var(--gradient);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.btn-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 84, 166, 0.3);
+}
+
+main {
+  min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 16px 5%;
+    min-height: auto;
+  }
+  
+  .logo img {
+    height: 150px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .btn-nav {
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+  }
+}

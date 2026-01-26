@@ -1,0 +1,64 @@
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1><span class="gradient-text">Your Health is Our Responsibility</span></h1>
+    <p>Providing comprehensive medical coordination and home-based care to ensure every senior lives with
+      dignity and health.</p>
+    <div class="hero-btns">
+      <a routerLink="/contact" class="btn-primary">Get Help Today</a>
+      <a routerLink="/about" class="btn-secondary">Learn Our Mission</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+  <div class="stat-item" *ngFor="let stat of stats">
+    <h2 class="gradient-text">{{ stat.value }}</h2>
+    <p>{{ stat.label }}</p>
+  </div>
+</section>
+
+<!-- How We Serve -->
+<section class="services-preview">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h2>How We Serve You</h2>
+      <p class="subtitle">Comprehensive support tailored for the unique needs of our elderly community.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon blue">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3>Medical Coordination</h3>
+        <p>We handle appointments, transport, and communication with doctors so you don't have to worry.</p>
+        <a routerLink="/services" class="service-link">Learn more →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon purple">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+        <h3>Financial Assistance</h3>
+        <p>Providing grants and financial aid for necessary treatments and medications for eligible seniors.</p>
+        <a routerLink="/services" class="service-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Need Assistance? We're Here For You.</h2>
+    <p>Don't navigate the healthcare system alone. Reach out to our dedicated team today.</p>
+    <a routerLink="/contact" class="btn-primary">Contact Us Now</a>
+  </div>
+</section>

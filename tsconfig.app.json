@@ -12,6 +12,17 @@
     "src/**/*.ts"
   ],
   "exclude": [
-    "src/**/*.spec.ts"
+    "src/**/*.spec.ts",
+    "src/**/*.tsx",
+    "src/app/hooks/**/*",
+    "src/app/components/**/*.tsx",
+    "src/app/pages/**/*.tsx",
+    "src/app/pages/Home.ts",
+    "src/app/pages/About.tsx",
+    "src/app/pages/Contact.tsx",
+    "src/app/pages/Services.tsx",
+    "src/app/pages/not-found.tsx",
+    "src/app/components/Layout.tsx",
+    "src/app/components/ui/**/*.tsx"
   ]
 }
