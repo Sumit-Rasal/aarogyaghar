@@ -1,22 +1,103 @@
 <!-- Hero Section -->
 <section class="hero" id="home">
-  <div class="hero-background-image"></div> <!-- New element for background image -->
+  <div class="hero-background-image"></div>
   <div class="hero-content">
-    <h1><span class="gradient-text">Your Health is Our Responsibility</span></h1>
-    <p>Providing comprehensive medical coordination and home-based care to ensure every senior lives with
-      dignity and health.</p>
+    <h1>
+      <span class="gradient-text">Let Us Care For Those</span><br>
+      <span class="gradient-text">Who Cared For Us</span>
+    </h1>
+    <p>We help neglected and financially struggling seniors who lack family support — with free medical care,
+      coordination, and financial aid. No elder should suffer alone.</p>
     <div class="hero-btns">
-      <a routerLink="/contact" class="btn-primary">Get Help Today</a>
-      <a routerLink="/about" class="btn-secondary">Learn Our Mission</a>
+      <a routerLink="/contact" class="btn-primary">Get Help</a>
+      <a routerLink="/about" class="btn-secondary">Our Mission</a>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Badges Section -->
+<section class="trust-badges">
+  <div class="container">
+    <div class="badges-grid">
+      <div class="badge-item" *ngFor="let badge of trustBadges">
+        <div class="badge-icon">
+          <svg *ngIf="badge.icon === 'calendar'" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <svg *ngIf="badge.icon === 'gift'" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <polyline points="20 12 20 22 4 22 4 12" />
+            <rect x="2" y="7" width="20" height="5" />
+            <line x1="12" y1="22" x2="12" y2="7" />
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+          </svg>
+          <svg *ngIf="badge.icon === 'shield'" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <polyline points="9 12 11 14 15 10" />
+          </svg>
+          <svg *ngIf="badge.icon === 'clock'" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </div>
+        <h3>{{ badge.title }}</h3>
+        <p>{{ badge.description }}</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Stats Section -->
 <section class="stats">
-  <div class="stat-item" *ngFor="let stat of stats">
+  <div class="stat-item" *ngFor="let stat of stats; let i = index" [style.animation-delay]="i * 0.1 + 's'">
     <h2 class="gradient-text">{{ stat.value }}</h2>
     <p>{{ stat.label }}</p>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <h2>How We Help</h2>
+      <p class="subtitle">Reaching out is the first step. We take care of the rest — completely free of cost.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step" *ngFor="let step of processSteps; let i = index">
+        <div class="step-number">{{ step.step }}</div>
+        <div class="step-connector" *ngIf="i < processSteps.length - 1"></div>
+        <div class="step-content">
+          <div class="step-icon">
+            <svg *ngIf="step.icon === 'phone'" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <svg *ngIf="step.icon === 'clipboard'" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+              <path d="M9 14l2 2 4-4" />
+            </svg>
+            <svg *ngIf="step.icon === 'heart'" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -24,8 +105,8 @@
 <section class="services-preview">
   <div class="container">
     <div class="text-center mb-16">
-      <h2>How We Serve You</h2>
-      <p class="subtitle">Comprehensive support tailored for the unique needs of our elderly community.</p>
+      <h2>Our Seva (Service)</h2>
+      <p class="subtitle">We serve elders who have no one to turn to — with love, respect, and zero cost.</p>
     </div>
 
     <div class="services-grid">
@@ -37,19 +118,52 @@
           </svg>
         </div>
         <h3>Medical Coordination</h3>
-        <p>We handle appointments, transport, and communication with doctors so you don't have to worry.</p>
+        <p>We arrange doctor appointments, accompany elders to hospitals, manage prescriptions, and ensure they receive
+          proper medical attention — all at no cost.</p>
         <a routerLink="/services" class="service-link">Learn more →</a>
       </div>
 
       <div class="service-card">
         <div class="service-icon purple">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
           </svg>
         </div>
         <h3>Financial Assistance</h3>
-        <p>Providing grants and financial aid for necessary treatments and medications for eligible seniors.</p>
+        <p>For those who cannot afford treatment, we provide grants for medicines, surgeries, and ongoing care. No
+          senior should skip treatment due to money.</p>
         <a routerLink="/services" class="service-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2>Stories of Hope</h2>
+      <p class="subtitle">Real stories from the elders and families we've had the privilege to serve.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="quote-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+          </svg>
+        </div>
+        <p class="quote-text">{{ testimonial.quote }}</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">{{ testimonial.avatar }}</div>
+          <div class="author-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p>{{ testimonial.role }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -58,8 +172,9 @@
 <!-- CTA Section -->
 <section class="cta-section">
   <div class="container">
-    <h2>Need Assistance? We're Here For You.</h2>
-    <p>Don't navigate the healthcare system alone. Reach out to our dedicated team today.</p>
-    <a routerLink="/contact" class="btn-primary">Contact Us Now</a>
+    <h2>Know Someone Who Needs Help?</h2>
+    <p>If you know an elderly person living alone, struggling financially, or not being cared for by family — please
+      reach out to us. We're here to help, free of charge.</p>
+    <a routerLink="/contact" class="btn-primary">Request Free Assistance</a>
   </div>
 </section>

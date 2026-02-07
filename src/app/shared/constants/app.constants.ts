@@ -1,58 +1,60 @@
 import { Service, AssistanceType } from '../models/contact.model';
+
 export const STATS = [
   {
-    value: '1,000+',
-    label: 'Seniors Helped',
+    value: '100+',
+    label: 'Lives Touched',
+  },
+  {
+    value: '₹5L+',
+    label: 'Medical Aid Given',
   },
   {
     value: '50+',
-    label: 'Healthcare Partners',
-  },
-  {
-    value: '100+',
-    label: 'Volunteers',
+    label: 'Dedicated Volunteers',
   },
 ];
 
 export const ASSISTANCE_TYPES: AssistanceType[] = [
   'Medical Coordination',
   'Financial Assistance',
+  'Report a Needy Senior',
   'General Inquiry',
 ];
 
 export const CONTACT_INFO = {
-  phone: '+91 8983216338',
-  phoneHours: 'Mon-Fri, 9am-5pm',
+  phone: '+91 89832 16338',
+  phoneHours: '24/7 Emergency Support',
   email: 'sumit.rasal301@gmail.com',
   address: {
-    line1: 'Morwadi, AT-Post: Nighoj',
-    line2: 'Tal - Parner, Dist - Ahilyanagar',
+    line1: 'Morwadi, At Post: Nighoj',
+    line2: 'Tal: Parner, Dist: Ahilyanagar',
   },
 };
 
 export const SERVICES: Service[] = [
   {
     id: 'medical-coordination',
-    title: 'Medical Coordination',
-    description: 'We handle all the logistics of your healthcare. From scheduling doctor appointments and transport to ensuring prescriptions are filled, our team is here to take the stress out of managing your health.',
+    title: 'Medical Seva (Healthcare)',
+    description: 'We take full responsibility for the health of neglected seniors. From arranging free doctor visits and hospital transport to ensuring they take their medicines on time — we are like their own family.',
     features: [
-      'Appointment scheduling & reminders',
-      'Transportation to medical facilities',
-      'Medication management & refills',
-      'Liaison between family and doctors',
+      'Free doctor consultations',
+      'Hospital admission support',
+      'Regular health check-ups',
+      'Medicine supply at doorstep',
     ],
-    gradient: 'linear-gradient(135deg, #007bff, #0056b3)',
+    gradient: 'linear-gradient(135deg, #0054A6, #007bff)',
   },
   {
     id: 'financial-assistance',
-    title: 'Financial Assistance',
-    description: 'Navigating healthcare costs can be overwhelming. We provide support by connecting seniors with grants, aid programs, and direct assistance for medical bills and prescriptions.',
+    title: 'Financial Aid (Dharmada)',
+    description: 'Poverty should not prevent anyone from getting treatment. We directly pay for surgeries, medicines, and hospital bills for seniors who have no financial support.',
     features: [
-      'Medical bill payment support',
-      'Prescription cost assistance',
-      'Guidance on available aid programs',
-      'Partnerships with local pharmacies',
+      'Direct hospital bill payment',
+      'Free life-saving medicines',
+      'Emergency surgery grants',
+      'Nutrition support',
     ],
-    gradient: 'linear-gradient(135deg, #28a745, #1e7e34)',
+    gradient: 'linear-gradient(135deg, #2BB673, #1e7e34)',
   },
 ];

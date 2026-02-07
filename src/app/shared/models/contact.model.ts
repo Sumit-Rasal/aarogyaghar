@@ -6,7 +6,7 @@ export interface ContactRequest {
   assistanceType: AssistanceType;
 }
 
-export type AssistanceType = 'Medical Coordination' | 'Financial Assistance' | 'General Inquiry';
+export type AssistanceType = 'Medical Coordination' | 'Financial Assistance' | 'Report a Needy Senior' | 'General Inquiry';
 
 export interface Service {
   id: string;
