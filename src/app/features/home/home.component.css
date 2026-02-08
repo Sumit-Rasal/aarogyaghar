@@ -69,7 +69,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
@@ -271,6 +271,9 @@
 }
 
 .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   text-align: center;
   flex: 1;
   min-width: 200px;
@@ -281,9 +284,16 @@
 .stat-item h2 {
   font-size: 3rem;
   margin-bottom: 10px;
+  min-height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
 }
 
 .stat-item p {
+  width: 100%;
+  text-align: center;
   font-size: 0.85rem;
   letter-spacing: 1.5px;
   font-weight: 700;

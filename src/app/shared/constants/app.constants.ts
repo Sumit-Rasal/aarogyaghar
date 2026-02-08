@@ -35,7 +35,7 @@ export const CONTACT_INFO = {
 export const SERVICES: Service[] = [
   {
     id: 'medical-coordination',
-    title: 'Medical Seva (Healthcare)',
+    title: 'Medical Coordination',
     description: 'We take full responsibility for the health of neglected seniors. From arranging free doctor visits and hospital transport to ensuring they take their medicines on time — we are like their own family.',
     features: [
       'Free doctor consultations',
@@ -47,7 +47,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'financial-assistance',
-    title: 'Financial Aid (Dharmada)',
+    title: 'Financial Assistance',
     description: 'Poverty should not prevent anyone from getting treatment. We directly pay for surgeries, medicines, and hospital bills for seniors who have no financial support.',
     features: [
       'Direct hospital bill payment',

@@ -143,36 +143,6 @@
   line-height: 1.6;
 }
 
-.emergency-notice {
-  background: #1e293b;
-  color: white;
-  padding: 80px 8%;
-  text-align: center;
-}
-
-.emergency-notice .container {
-  max-width: 800px;
-}
-
-
-.emergency-notice svg {
-  color: var(--primary-blue);
-  margin: 0 auto 24px;
-  display: block;
-}
-
-.emergency-notice h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.emergency-notice p {
-  font-size: 1.1rem;
-  color: #94a3b8;
-  line-height: 1.7;
-}
-
 @media (max-width: 768px) {
   .service-section,
   .service-section.reverse {
