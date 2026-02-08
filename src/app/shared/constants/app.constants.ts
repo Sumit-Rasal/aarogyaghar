@@ -18,7 +18,6 @@ export const STATS = [
 export const ASSISTANCE_TYPES: AssistanceType[] = [
   'Medical Coordination',
   'Financial Assistance',
-  'Report a Needy Senior',
   'General Inquiry',
 ];
 

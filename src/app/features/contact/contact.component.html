@@ -116,6 +116,23 @@
             </span>
           </div>
 
+          <div class="submit-messages" *ngIf="submitSuccess || submitError">
+            <div class="success-message" *ngIf="submitSuccess">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Thank you! Your request has been submitted.</span>
+            </div>
+            <div class="error-banner" *ngIf="submitError">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>{{ submitError }}</span>
+            </div>
+          </div>
+
           <button type="submit" class="btn-primary" [disabled]="isSubmitting">
             {{ isSubmitting ? 'Sending Request...' : 'Submit Request' }}
           </button>

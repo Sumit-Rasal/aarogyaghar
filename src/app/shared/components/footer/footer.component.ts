@@ -28,8 +28,8 @@ export class FooterComponent {
     socialLinks = [
         { name: 'Facebook', icon: 'facebook', url: '#' },
         { name: 'Twitter', icon: 'twitter', url: '#' },
-        { name: 'Instagram', icon: 'instagram', url: '#' },
-        { name: 'LinkedIn', icon: 'linkedin', url: '#' }
+        { name: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/aarogyaghar.life' },
+        { name: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/company/aaroghyaghar' },
     ];
 
     constructor(private router: Router) { }

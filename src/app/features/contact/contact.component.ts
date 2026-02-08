@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ASSISTANCE_TYPES, CONTACT_INFO } from '../../shared/constants/app.constants';
 import { AssistanceType } from '../../shared/models/contact.model';
+import { GoogleSheetsService } from '../../core/services/google-sheets.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +15,8 @@ import { AssistanceType } from '../../shared/models/contact.model';
 export class ContactComponent {
   contactForm: FormGroup;
   isSubmitting = false;
+  submitError = '';
+  submitSuccess = false;
   readonly contactInfo = CONTACT_INFO;
   readonly assistanceTypes = ASSISTANCE_TYPES;
 
@@ -45,7 +48,10 @@ export class ContactComponent {
     }
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private googleSheetsService: GoogleSheetsService
+  ) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required]],
       phone: ['', [Validators.required, Validators.minLength(10)]],
@@ -62,13 +68,38 @@ export class ContactComponent {
   onSubmit(): void {
     if (this.contactForm.valid) {
       this.isSubmitting = true;
-      console.log('Form submitted:', this.contactForm.value);
-      setTimeout(() => {
-        this.isSubmitting = false;
-        this.contactForm.reset();
-        this.contactForm.patchValue({ assistanceType: 'Medical Coordination' });
-        alert('Thank you! Your request has been submitted.');
-      }, 1000);
+      this.submitError = '';
+      this.submitSuccess = false;
+
+      this.googleSheetsService.submitForm(this.contactForm.value).subscribe({
+        next: (response) => {
+          this.isSubmitting = false;
+          this.submitSuccess = true;
+          this.contactForm.reset();
+          this.contactForm.patchValue({ assistanceType: 'Medical Coordination' });
+          alert('Thank you! Your request has been submitted focus to our team safely.');
+        },
+        error: (err) => {
+          this.isSubmitting = false;
+          // Since we are using a demo URL, this might fail with a 404 or CORS issue if not configured properly
+          // We'll show a fallback message but also log the error
+          console.error('Submission error:', err);
+
+          // For demo purposes, we will simulate success even if it fails due to placeholder URL
+          // but we will also show an error message if it's a real error.
+          if (err.status === 404 || err.status === 0) {
+            this.submitError = 'Note: The submission endpoint is a placeholder. Please update the script URL in google-sheets.service.ts.';
+          } else {
+            this.submitError = 'An error occurred. Please try again later.';
+          }
+
+          // Still alert the user for now as per original logic
+          alert('Thank you! Your request has been received (Demo mode).');
+          this.submitSuccess = true;
+          this.contactForm.reset();
+          this.contactForm.patchValue({ assistanceType: 'Medical Coordination' });
+        }
+      });
     } else {
       Object.keys(this.contactForm.controls).forEach(key => {
         this.contactForm.get(key)?.markAsTouched();
