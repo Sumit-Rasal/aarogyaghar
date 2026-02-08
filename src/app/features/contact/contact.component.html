@@ -67,7 +67,7 @@
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="name">Full Name *</label>
-            <input type="text" id="name" formControlName="name" placeholder="Sumit Rasal"
+            <input type="text" id="name" formControlName="name" placeholder="Vijaya Rasal"
               [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" />
             <span class="error-message" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
               {{ getErrorMessage('name') }}

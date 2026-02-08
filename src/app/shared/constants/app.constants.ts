@@ -25,7 +25,7 @@ export const ASSISTANCE_TYPES: AssistanceType[] = [
 export const CONTACT_INFO = {
   phone: '+91 89832 16338',
   phoneHours: '24/7 Emergency Support',
-  email: 'sumit.rasal301@gmail.com',
+  email: 'help@aarogyaghar.life',
   address: {
     line1: 'Morwadi, At Post: Nighoj',
     line2: 'Tal: Parner, Dist: Ahilyanagar',

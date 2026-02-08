@@ -20,9 +20,9 @@ export class FooterComponent {
     ];
 
     contactInfo = {
-        phone: '+91 98765 43210',
-        email: 'care@aarogyaghar.org',
-        address: 'Mumbai, Maharashtra, India'
+        phone: '+91 89832 16338',
+        email: 'help@aarogyaghar.life',
+        address: 'Morwadi, Maharashtra, India'
     };
 
     socialLinks = [
